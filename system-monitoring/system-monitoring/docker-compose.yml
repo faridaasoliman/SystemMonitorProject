@@ -1,0 +1,29 @@
+
+
+services:
+  collector:
+    build: ./collector
+    container_name: metrics_collector
+    volumes:
+      - ./logs:/app/logs
+    restart: always
+
+  reporter:
+    build: ./reporter
+    container_name: metrics_reporter
+    volumes:
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+    depends_on:
+      - collector
+    restart: on-failure
+
+  dashboard:
+    build: ./dashboard
+    container_name: metrics_dashboard
+    ports:
+      - "8080:80"
+    volumes:
+      - ./reports:/usr/share/nginx/html/reports
+      - ./dashboard/html:/usr/share/nginx/html
+    restart: always
