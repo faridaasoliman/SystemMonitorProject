@@ -11458,3 +11458,55 @@ Wed Dec 17 04:36:37 AM EST 2025 | START load
 /home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 16: syntax error: unexpected end of file
 Wed Dec 17 04:36:37 AM EST 2025 | END load rc=2
 Wed Dec 17 04:36:37 AM EST 2025 | collect-all triggered
+Wed Dec 17 04:37:16 AM EST 2025 | START cpu
+Wed Dec 17 04:37:16 AM EST 2025 | END cpu rc=0
+Wed Dec 17 04:37:16 AM EST 2025 | START gpu
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 24: syntax error: unexpected end of file
+Wed Dec 17 04:37:16 AM EST 2025 | END gpu rc=2
+Wed Dec 17 04:37:16 AM EST 2025 | START mem
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 22: syntax error: unexpected end of file
+Wed Dec 17 04:37:16 AM EST 2025 | END mem rc=2
+Wed Dec 17 04:37:16 AM EST 2025 | START disk
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 13: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 34: syntax error: unexpected end of file
+Wed Dec 17 04:37:16 AM EST 2025 | END disk rc=2
+Wed Dec 17 04:37:16 AM EST 2025 | START net
+Wed Dec 17 04:37:16 AM EST 2025 | END net rc=0
+Wed Dec 17 04:37:16 AM EST 2025 | START load
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 9: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 16: syntax error: unexpected end of file
+Wed Dec 17 04:37:16 AM EST 2025 | END load rc=2
+Wed Dec 17 04:37:16 AM EST 2025 | collect-all triggered
+Wed Dec 17 04:37:37 AM EST 2025 | START cpu
+Wed Dec 17 04:37:37 AM EST 2025 | END cpu rc=0
+Wed Dec 17 04:37:37 AM EST 2025 | START gpu
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/gpu_monitor.sh: line 24: syntax error: unexpected end of file
+Wed Dec 17 04:37:37 AM EST 2025 | END gpu rc=2
+Wed Dec 17 04:37:37 AM EST 2025 | START mem
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/memory_monitor.sh: line 22: syntax error: unexpected end of file
+Wed Dec 17 04:37:37 AM EST 2025 | END mem rc=2
+Wed Dec 17 04:37:37 AM EST 2025 | START disk
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 10: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 13: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/disk-monitor.sh: line 34: syntax error: unexpected end of file
+Wed Dec 17 04:37:37 AM EST 2025 | END disk rc=2
+Wed Dec 17 04:37:37 AM EST 2025 | START net
+Wed Dec 17 04:37:37 AM EST 2025 | END net rc=0
+Wed Dec 17 04:37:37 AM EST 2025 | START load
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 2: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 9: $'\r': command not found
+/home/kali/SystemMonitorProject/SystemMonitorProject/collector/system_load.sh: line 16: syntax error: unexpected end of file
+Wed Dec 17 04:37:37 AM EST 2025 | END load rc=2
+Wed Dec 17 04:37:37 AM EST 2025 | collect-all triggered
