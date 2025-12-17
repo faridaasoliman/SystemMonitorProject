@@ -19,9 +19,9 @@ if [ -n "$IFACE" ]; then
         TX_KB=$((TX/1024))
 
         # Compute simple KB/s using previous sample if present
-        RX_KBPS="N/A"
-        TX_KBPS="N/A"
-        TOTAL_KBPS="N/A"
+        RX_KBPS=0
+        TX_KBPS=0
+        TOTAL_KBPS=0
         NOW=$(date +%s)
         if [ -f "$PREV_SAMPLE" ]; then
             read PREV_TS PREV_RX PREV_TX < "$PREV_SAMPLE"
@@ -31,8 +31,8 @@ if [ -n "$IFACE" ]; then
                 TX_KBPS=$(( (TX - PREV_TX) / 1024 / DT ))
                 [ "$RX_KBPS" -lt 0 ] && RX_KBPS=0
                 [ "$TX_KBPS" -lt 0 ] && TX_KBPS=0
-                TOTAL_KBPS=$((RX_KBPS + TX_KBPS))
             fi
+            TOTAL_KBPS=$((RX_KBPS + TX_KBPS))
         fi
 
         echo "$NOW $RX $TX" > "$PREV_SAMPLE"
@@ -42,4 +42,5 @@ if [ -n "$IFACE" ]; then
     fi
 else
     echo "$(date) | Network: no interface detected" >> "$LOG"
+    echo "$(date) | IFACE:none RX:0KB TX:0KB RX_KBPS:0 TX_KBPS:0 TOTAL_KBPS:0" >> "$LOG"
 fi

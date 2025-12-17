@@ -8,6 +8,9 @@ LOG="$LOG_DIR/memory.log"
 ERROR="$LOG_DIR/alerts.log"
 
 MEM=$(free -m | awk 'NR==2{printf "%.0f", $3*100/$2 }')
+if [ -z "$MEM" ]; then
+    MEM=0
+fi
 
 echo "$(date) | Memory Usage: $MEM%" >> "$LOG"
 

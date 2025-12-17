@@ -10,6 +10,11 @@ ERROR="$LOG_DIR/alerts.log"
 DISK=$(df -h / | awk 'NR==2{print $5}')
 NUM=${DISK%\%}
 
+if [ -z "$NUM" ]; then
+    NUM=0
+    DISK="0%"
+fi
+
 echo "$(date) | Disk Usage: $DISK" >> "$LOG"
 
 if [ "$NUM" -gt 90 ]; then

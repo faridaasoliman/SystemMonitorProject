@@ -86,31 +86,34 @@ def metrics_from_logs() -> Dict[str, Any]:
     net_line = _read_last_line(LOG_DIR / "network.log")
     gpu_line = _read_last_line(LOG_DIR / "gpu.log")
     load_line = _read_last_line(LOG_DIR / "systemload.log")
+    alert_line = _read_last_line(LOG_DIR / "alerts.log")
+    cron_line = _read_last_line(LOG_DIR / "cron.log")
 
     cpu_match = CPU_RE.search(cpu_line or "")
-    cpu_percent = _safe_float(cpu_match.group(1)) if cpu_match else None
+    cpu_percent = _safe_float(cpu_match.group(1)) if cpu_match else 0.0
     cpu_temp_match = CPU_TEMP_RE.search(cpu_line or "")
     cpu_temp = _safe_float(cpu_temp_match.group(1)) if cpu_temp_match else None
 
     mem_match = MEM_RE.search(mem_line or "")
-    memory_percent = _safe_float(mem_match.group(1)) if mem_match else None
+    memory_percent = _safe_float(mem_match.group(1)) if mem_match else 0.0
 
     disk_match = DISK_RE.search(disk_line or "")
-    disk_percent = _safe_float(disk_match.group(1)) if disk_match else None
+    disk_percent = _safe_float(disk_match.group(1)) if disk_match else 0.0
 
     net_match = NET_KBPS_RE.search(net_line or "")
     network_kbps = _safe_float(net_match.group(1)) if net_match else None
     if network_kbps is None:
-        # Fallback to total KB (not a rate) so the UI still shows something
         net_fallback = NET_FALLBACK_RE.search(net_line or "")
         if net_fallback:
             network_kbps = _safe_float(int(net_fallback.group(1)) + int(net_fallback.group(2)))
+    if network_kbps is None:
+        network_kbps = 0.0
 
     gpu_match = GPU_RE.search(gpu_line or "")
-    gpu_percent = _safe_float(gpu_match.group(1)) if gpu_match else None
+    gpu_percent = _safe_float(gpu_match.group(1)) if gpu_match else 0.0
 
     load_match = LOAD_RE.search(load_line or "")
-    load_avg = load_match.group(1).strip() if load_match else None
+    load_avg = load_match.group(1).strip() if load_match else "0.00 0.00 0.00"
 
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -121,6 +124,8 @@ def metrics_from_logs() -> Dict[str, Any]:
         "network_kbps": network_kbps,
         "gpu_percent": gpu_percent,
         "load_avg": load_avg,
+        "alert_last": alert_line or "",
+        "cron_last": cron_line or "",
         "source": "logs",
     }
 
