@@ -1,8 +1,0 @@
-{
-  "cpu_percent": 14.2,
-  "memory_percent": 45.3,
-  "disk_percent": 67.1,
-  "network_kbps": 120.5,
-  "gpu_percent": 3.2,
-  "load_avg": "0.42 0.38 0.30"
-}
