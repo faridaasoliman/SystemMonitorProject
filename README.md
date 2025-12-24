@@ -1,60 +1,77 @@
+
 # System Monitor Project
 
-A Linux system monitoring tool built using Bash, Docker, and a simple GUI (Zenity/Dialog). 
-The project collects system metrics, shows live stats, saves logs, and generates reports.
-
----
+A lightweight Linux system monitoring project built using **Bash scripting** and **Docker**.  
+The project monitors system resources such as CPU, memory, disk, network, GPU, and system load, logs the data, and generates basic reports and alerts.
 
 ## Features
-- CPU, GPU, RAM, Disk, Network, and System Load monitoring
-- Log files for all collected metrics
-- Alerts for high usage thresholds
-- GUI dashboard for easy interaction
-- HTML and Markdown report generation
-- Docker support for running the system in containers
-
----
-
-## Tech Used
-- Bash scripting
-- Docker and Docker Compose
-- Zenity or Dialog for GUI
-- Optional: Python and InfluxDB for historical tracking
-
----
+- CPU, memory, disk, network, GPU, and system load monitoring
+- Automatic logging of system metrics
+- Alert system for high resource usage
+- Simple report generation
+- Docker and Docker Compose support
+- Modular Bash scripts
 
 ## Project Structure
-SystemMonitorProject/
-│── scripts/            # Monitoring scripts
-│── dashboard/          # GUI menu + actions
-│── docker/             # Dockerfiles
-│── logs/               # Saved logs
-│── reports/            # Report templates + output
-│── docker-compose.yml
-│── README.md
+```
 
----
+SystemMonitorProject/
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+├── logs/
+│   ├── cpu.log
+│   ├── memory.log
+│   ├── disk.log
+│   ├── network.log
+│   └── systemload.log
+├── reports/
+│   └── report.txt
+└── scripts/
+├── collect-all.sh
+├── cpu_monitor.sh
+├── memory_monitor.sh
+├── disk-monitor.sh
+├── network_monitor.sh
+├── gpu_monitor.sh
+├── system_load.sh
+└── alerts.sh
+
+````
+
+## Requirements
+- Linux OS (tested on Kali Linux)
+- Bash shell
+- Docker & Docker Compose (optional)
+- Zenity or Dialog (for alert notifications)
 
 ## How to Run
 
-### Run locally:
+### Run without Docker
+```bash
 chmod +x scripts/*.sh
-chmod +x dashboard/*.sh
-./dashboard/menu.sh
+./scripts/collect-all.sh
+````
 
-### Run with Docker:
-sudo docker compose up --build
+### Run with Docker
 
----
+```bash
+docker-compose up --build
+```
 
-## Team Roles
-- Member 1: Monitoring scripts and alert system
-- Member 2: Docker setup and infrastructure
-- Member 3: GUI development and reporting system
+## Logs and Reports
 
----
+* Logs are stored in the `logs/` directory
+* Reports are stored in the `reports/` directory
+* Each log file contains timestamped system performance data
 
-## Notes
-- This project is built for the AASTMT OS course project
-- Tested on Kali Linux running on VMware
+## Purpose
+
+This project was developed for educational purposes to AASTMT covering:
+
+* Linux system monitoring
+* Bash scripting
+* Resource and process management
+* Docker containerization
+* Operating Systems concepts
 
