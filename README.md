@@ -43,7 +43,7 @@ SystemMonitorProject/
 - Linux OS (tested on Kali Linux)
 - Bash shell
 - Docker & Docker Compose (optional)
-- Zenity or Dialog (for alert notifications)
+
 
 ## How to Run
 
